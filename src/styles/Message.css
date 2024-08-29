@@ -1,0 +1,58 @@
+.message {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  animation: slide-up 0.3s ease-out;
+}
+
+.sender {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.text {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 4px;
+  min-width: 60%;
+  max-width: 100%;
+}
+
+.text img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.message.you-message ,.message.luny-message {
+  background-color: transparent !important;
+}
+.image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.remove-image-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.message-image {
+  max-width: 200px; 
+  max-height: 200px; 
+  border-radius: 8px; 
+}

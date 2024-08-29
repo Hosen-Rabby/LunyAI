@@ -15,6 +15,9 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,11 +27,13 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+
+    <title>Luny AI</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +44,39 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <div class="particles">
+      <!-- Particles will be dynamically generated here -->
+    </div>
+
+    <script>
+      document.addEventListener("mousemove", function (e) {
+        const lightSize =
+          Math.random() > 0.5 ? "magic-light small" : "magic-light";
+        const light = document.createElement("div");
+        light.className = lightSize;
+        light.style.left = `${e.clientX + Math.random() * 5 - 2}px`;
+        light.style.top = `${e.clientY - 20 + Math.random() * 10}px`;
+        document.body.appendChild(light);
+        setTimeout(() => {
+          light.remove();
+        }, 1500);
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        window.scrollTo(0, 0);
+        const particlesContainer = document.querySelector(".particles");
+        for (let i = 0; i < 100; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          const size = 3 * Math.random() + 1;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = 100 * Math.random() + "%";
+          particle.style.top = 100 * Math.random() + "%";
+          particle.style.animationDuration = 20 * Math.random() + 10 + "s";
+          particle.style.animationDelay = `-${10 * Math.random()}s`;
+          particlesContainer.appendChild(particle);
+        }
+      });
+    </script>
   </body>
 </html>

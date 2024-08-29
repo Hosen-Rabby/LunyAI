@@ -1,0 +1,156 @@
+.chatbox {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border: 1px solid #e9e9e991;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.chat_top_bar {
+  -webkit-backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  border-radius: 9px 9px 0px 0px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.chat_top_bar img {
+  float: right;
+}
+.inbox {
+  padding:0 10px 15px 10px;
+  backdrop-filter: blur(2px);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fbfbfcae;
+  backdrop-filter: blur(2px);
+}
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: 100%;
+}
+.messages:last-child {
+  margin-bottom: 50px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  animation: slide-up 0.3s ease-out;
+  flex-direction: column;
+  margin: 10px 0px;
+  width: 100%;
+  background-color: #f2f4f7;
+  padding: 10px;
+  border-radius: 5px;
+}
+.you-message,
+.luny-message {
+  padding: 0;
+  background: #f2f4f7;
+}
+
+.you-message,
+.ai-message {
+  justify-content: flex-start;
+}
+
+.sender {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.text {
+  background-color: #f2f4f7;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 12px;
+  word-wrap: break-word; 
+  white-space: pre-wrap; 
+  overflow-wrap: break-word; 
+}
+
+.text img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.loading-box {
+  padding: 25px;
+  background-color: #f9f5ff;
+  border: 1px solid #f2ebfd;
+  margin-bottom: 10px;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.loading-box img {
+  width: 15px;
+  height: 15px;
+}
+.proposal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.proposal {
+  width: 100%;
+  padding: 5px 0;
+  color: #7f56d9;
+  cursor: pointer;
+}
+.proposal:hover {
+  color: #6941c6;
+}
+
+.wishlist-button-container,
+.wishlist-button_2,
+.wishlist-button {
+  display: block;
+  padding: 5px 14px;
+  background-color: #291853;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 6px;
+  border: none;
+  margin-top: 20px;
+}
+
+.wishlist-button_2 {
+  margin: 0 auto;
+}
+.wishlist-button:hover {
+  background-color: #291853d4;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
